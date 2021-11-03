@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert New House</title>
+</head>
+<body>
+<form th:object="${newHouse}" 
+th:action="@{/update/{id}(id=${newHouse.id})}" method=POST>>
+Number of Bedrooms: <input name="numOfBedrooms" size="20" 
+th:field="*{numOfBedrooms}"><br />
+
+Number of Bathrooms: <input name="numOfBathrooms" size="20"
+th:field="*{numOfBathrooms}"><br />
+
+Address: <input name="address" size="20" th:field="*{address}"><br />
+
+Price: <input name="price" size="20"
+th:field="*{price}"><br />
+
+Owner's First Name: <input name="owner.fName" size="20"
+th:field="*{owner.fName}"><br />
+
+Owner's Last Name: <input name="owner.lName" size="20"
+th:field="*{owner.lName}"><br />
+
+Owner's Age: <input name="owner.age" size="20"
+th:field="*{owner.age}"><br />
+
+Estate Agent's Name: <input name="agent.name" size="20"
+th:field="*{agent.name}"><br />
+
+Estate Agent's Email: <input name="agent.email" size="20"
+th:field="*{agent.email}"><br />
+
+Estate Agent's Phone Number: <input name="agent.phoneNumber" size="20"
+th:field="*{agent.phoneNumber}"><br />
+<input name="submit" type="submit" value="submit" />
+</form>
+<a href="viewAll">View all Houses</a>
+</body>
+</html>

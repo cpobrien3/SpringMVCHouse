@@ -1,0 +1,32 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View All Houses</title>
+</head>
+<body>
+<form>
+<table>
+<tr th:each="currentHouse : ${houses}" >
+<td th:text="${currentHouse.id}" />
+ <td th:text="${currentHouse.numOfBedrooms}" />
+ <td th:text="${currentHouse.numOfBathrooms}" />
+ <td th:text="${currentHouse.address}" />
+ <td th:text="${currentHouse.price}" />
+ 
+ <td th:text="${currentHouse.owner.fName}" />
+ <td th:text="${currentHouse.owner.lName}" />
+ <td th:text="${currentHouse.owner.age}" />
+ 
+  <td th:text="${currentHouse.agent.name}" />
+  <td th:text="${currentHouse.agent.phoneNumber}" />
+  <td th:text="${currentHouse.agent.email}" />
+  
+ <td><a th:href="@{/edit/{id}(id=${currentHouse.id})}">Edit House Info</a></td>
+ <td><a 
+	th:href="@{/delete/{id}(id=${currentHouse.id})}">Delete</a></td>
+</tr>
+</table>
+</form>
+<a href="../inputHouse">Add a new house</a>
+</body>
+</html>
